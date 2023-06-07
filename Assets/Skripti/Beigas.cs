@@ -9,23 +9,28 @@ public class Beigas : MonoBehaviour {
     public float gameDuration = 1000000f;
     public Text TaimeraTeksts;
     public Objekti objekti;
-    public Image Restart;
-    public Image sakums;
-    public Image[] rezultataBildes;
+    public Button Restart;
+    public Button sakums;
+    // public Image[] rezultataBildes;
+    public Sprite[] images;
     private bool spelePabeigta;
     private float spelesTaimeris = 0f;
-    private int rezultatsZvaigznes = 0; 
+    private int rezultatsZvaigznes = 0;
+
+    public Image mm;
 
 
     private void Start()
     {
-        foreach (Image rezultataBilde in rezultataBildes)
-        {
-            rezultataBilde.gameObject.SetActive(false);
+        // foreach (Image rezultataBilde in rezultataBildes)
+        // {
+        //     rezultataBilde.gameObject.SetActive(false);
+            mm.gameObject.SetActive(false);
             TaimeraTeksts.gameObject.SetActive(false);
             sakums.gameObject.SetActive(false);
             Restart.gameObject.SetActive(false);
-        }
+            
+        // }
     }
 
 
@@ -37,7 +42,7 @@ public class Beigas : MonoBehaviour {
 
             JaunaisTaimeraTeksts();
         }
-        if (objekti.novietotieObjekti == 12)
+        if (objekti.novietotieObjekti == 1)
             {
                 Pabeigta();
             }
@@ -59,13 +64,14 @@ public class Beigas : MonoBehaviour {
     {
         for (int i = 0; i < rezultatsZvaigznes; i++)
         {
-            if (i < rezultataBildes.Length)
-            {
-                rezultataBildes[i].gameObject.SetActive(true);
-                TaimeraTeksts.gameObject.SetActive(true);
-                sakums.gameObject.SetActive(true);
-                Restart.gameObject.SetActive(true);
-            }
+            // if (i < rezultataBildes.Length)
+            // {
+            //     rezultataBildes[i].gameObject.SetActive(true);
+            //     TaimeraTeksts.gameObject.SetActive(true);
+            //     sakums.gameObject.SetActive(true);
+            //     Restart.gameObject.SetActive(true);
+            // }
+            mm.sprite = images[i];
         }
     }
 
