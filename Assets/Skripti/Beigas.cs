@@ -18,6 +18,7 @@ public class Beigas : MonoBehaviour {
     private int rezultatsZvaigznes = 0;
 
     public Image mm;
+    
 
 
     private void Start()
@@ -39,10 +40,11 @@ public class Beigas : MonoBehaviour {
         if (!spelePabeigta)
         {
             spelesTaimeris += Time.deltaTime;
-
+            
+            //Debug.Log(objekti.novietotieObjekti);
             JaunaisTaimeraTeksts();
         }
-        if (objekti.novietotieObjekti == 1)
+        if (objekti.novietotieObjekti == 11)
             {
                 Pabeigta();
             }
@@ -62,6 +64,11 @@ public class Beigas : MonoBehaviour {
 
     private void Rezultats(int rezultatsZvaigznes)
     {
+        mm.gameObject.SetActive(true);
+        for (int i = 0; i < mm.transform.childCount; i++)
+        {
+            mm.transform.GetChild(i).gameObject.SetActive(true);
+        }
         for (int i = 0; i < rezultatsZvaigznes; i++)
         {
             // if (i < rezultataBildes.Length)

@@ -28,7 +28,6 @@ public class Liksana : MonoBehaviour, IDropHandler {
                     (xStarpiba <= 0.3 && yStarpiba <= 0.3))
                 {
                     objekti.novietotsPareizi = true;
-                    Debug.Log(objekti.novietotieObjekti);
                     eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition =
                         GetComponent<RectTransform>().anchoredPosition;
                     eventData.pointerDrag.GetComponent<RectTransform>().localRotation =
@@ -37,7 +36,7 @@ public class Liksana : MonoBehaviour, IDropHandler {
                         GetComponent<RectTransform>().localScale;
 
                     objekti.audio.PlayOneShot(objekti.skana[0]);
-
+                    
                     switch (eventData.pointerDrag.tag)
                     {
                         case "autobuss":
